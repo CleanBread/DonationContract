@@ -13,7 +13,7 @@ contract DonationContract is Ownable {
     }
 
     function donate() public payable {
-        require(msg.value > 0, "Donate for zero amount");
+        require(msg.value == 0, "Donate for zero amount");
 
         ownerToDonation[msg.sender] += msg.value;
         allDotatValue += msg.value;
